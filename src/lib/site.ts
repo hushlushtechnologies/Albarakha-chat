@@ -14,7 +14,7 @@ export const site = {
   website: "https://afaqalbarakha.com",
   // The main website, used for the Terms and Privacy links.
   mainSiteUrl: process.env.NEXT_PUBLIC_MAIN_SITE_URL || "https://al-barakha.vercel.app",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "971545713199",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "971542440850",
 } as const;
 
 export const legalLinks = {

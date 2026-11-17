@@ -6,7 +6,7 @@ AI lead-capture chatbot and sales dashboard for **Afaq Al Barakha Investment** (
 Meta / Instagram ad ──► Chat page (/)  ─┐
 Main website bubble ──► Chat (/embed) ──┼─► AI qualifies the visitor ─► Lead saved (Supabase)
                                         │                                   │
-                                        │                                   ├─► WhatsApp handover (+971 54 571 3199)
+                                        │                                   ├─► WhatsApp handover (+971 54 244 0850)
                                         │                                   ├─► Meta Lead event (Pixel + Conversions API)
                                         └──────────────────────────────────►└─► Sales dashboard (/admin)
 ```
@@ -113,7 +113,7 @@ Put these in `.env.local` locally, and in Vercel → Project → Settings → En
 | `OPENAI_MODEL` | no | Default `gpt-5.4-mini` |
 | `SUPABASE_URL` | yes | Supabase → Settings → API |
 | `SUPABASE_SECRET_KEY` | yes | Supabase → Settings → API Keys → **Secret key** (`sb_secret_…`). Server only, never put it in a `NEXT_PUBLIC_` variable |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | yes | Digits only, e.g. `971545713199` |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | yes | Digits only, e.g. `971542440850` |
 | `NEXT_PUBLIC_MAIN_SITE_URL` | yes | Main website, used for the Terms and Privacy links |
 | `NEXT_PUBLIC_META_PIXEL_ID` | no | Turns on the Meta Pixel |
 | `META_CAPI_ACCESS_TOKEN` | no | Turns on the server-side Conversions API |
