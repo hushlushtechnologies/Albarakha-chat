@@ -29,7 +29,7 @@ alter table leads add column if not exists preferred_time text;
 alter table leads add column if not exists consent boolean default false;
 alter table leads add column if not exists consent_at timestamptz;
 alter table leads add column if not exists language text;
-
+   
 create table if not exists messages (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz default now(),
