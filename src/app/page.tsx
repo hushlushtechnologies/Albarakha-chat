@@ -12,64 +12,64 @@ export default function Home() {
   const points = content.trustPoints.filter((p) => p.confirmed);
 
   return (
-    <main className="relative isolate min-h-dvh overflow-hidden">
+    <main className="relative isolate min-h-dvh overflow-hidden lg:flex lg:items-center">
       <Backdrop />
 
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1280px] flex-col lg:grid lg:h-dvh lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-16 lg:px-10 xl:gap-24">
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1280px] flex-col lg:grid lg:h-[min(100dvh,900px)] lg:min-h-0 lg:grid-cols-[minmax(0,1fr)_440px] lg:gap-16 lg:px-10 xl:gap-24">
         {/* ── Brand panel ── */}
-        <section className="hidden min-h-0 flex-col justify-between overflow-y-auto py-12 lg:flex">
+        <section className="no-scrollbar hidden min-h-0 flex-col justify-between overflow-y-auto py-8 lg:flex [@media(max-height:760px)]:py-6">
           <div className="flex items-center gap-4">
-            <div className="grid size-14 place-items-center rounded-2xl border border-gold/40 bg-gold-surface">
-              <Image src="/logo-mark.svg" alt="" width={40} height={44} className="h-10 w-auto" priority />
+            <div className="grid size-12 place-items-center rounded-xl border border-gold/40 bg-gold-surface">
+              <Image src="/logo-mark.svg" alt="" width={34} height={37} className="h-8 w-auto" priority />
             </div>
             <div>
-              <p className="text-xl font-semibold text-primary">{site.shortName}</p>
-              <p className="mt-0.5 text-xs tracking-[0.22em] text-secondary/70 uppercase">{site.locationLabel}</p>
+              <p className="text-lg font-semibold text-primary">{site.shortName}</p>
+              <p className="mt-0.5 text-[11px] tracking-[0.22em] text-secondary/70 uppercase">{site.locationLabel}</p>
             </div>
           </div>
 
-          <div className="py-10">
-            <h1 className="max-w-xl font-display text-[clamp(2.25rem,2.4vw+1rem,3.4rem)] leading-[1.1] font-semibold tracking-tight text-primary">
+          <div className="py-6 [@media(max-height:760px)]:py-4">
+            <h1 className="max-w-xl font-display text-[clamp(1.875rem,1.5vw+1rem,2.75rem)] leading-[1.12] [@media(max-height:760px)]:text-[clamp(1.75rem,1.2vw+1rem,2.25rem)] font-semibold tracking-tight text-primary">
               {content.headline.lead} <span className="text-gold">{content.headline.accent}</span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-secondary/80">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-secondary/80">
               {content.minimumInvestment
                 ? `Opportunities from ${content.minimumInvestment}. ${content.subheadline}`
                 : content.subheadline}
             </p>
 
             {stats.length > 0 && (
-              <dl className="mt-10 flex max-w-lg gap-10">
+              <dl className="mt-7 flex max-w-lg gap-10">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <dd className="font-display text-3xl font-semibold text-primary">{stat.value}</dd>
+                    <dd className="font-display text-2xl font-semibold text-primary">{stat.value}</dd>
                     <dt className="mt-1 text-sm text-secondary/70">{stat.label}</dt>
                   </div>
                 ))}
               </dl>
             )}
 
-            <ul className="mt-10 max-w-lg space-y-3.5">
+            <ul className="mt-7 max-w-lg space-y-2.5 [@media(max-height:760px)]:mt-5">
               {points.map((p) => (
-                <li key={p.text} className="flex gap-3 text-[15px] text-secondary">
-                  <Check className="mt-1 size-4 shrink-0 text-gold" aria-hidden />
+                <li key={p.text} className="flex gap-3 text-sm text-secondary">
+                  <Check className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
                   <span className="leading-relaxed">{p.text}</span>
                 </li>
               ))}
             </ul>
 
             {content.officeHours && (
-              <p className="mt-8 text-sm text-secondary/80">
+              <p className="mt-6 text-sm text-secondary/80">
                 <span className="text-primary">Office hours:</span> {content.officeHours}
               </p>
             )}
           </div>
 
           <div className="max-w-lg">
-            <p className="flex items-center gap-2 text-sm text-secondary/80">
+            <p className="flex items-center gap-2 text-[13px] text-secondary/80">
               <Lock className="size-3.5 text-gold" aria-hidden /> {content.confidentialNote}
             </p>
-            <p className="mt-3 text-xs leading-relaxed text-muted">
+            <p className="mt-2 text-xs leading-relaxed text-muted">
               {content.showDisclaimers && <>{content.disclaimer} </>}
               <ImportantInfoLink className="underline underline-offset-2 hover:text-brand-light" />
               {" · "}
